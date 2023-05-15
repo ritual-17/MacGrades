@@ -4,6 +4,8 @@ target/
 !**/src/test/**/target/
 
 *.pdf
+*.jar
+*.class
 
 ### IntelliJ IDEA ###
 .idea/
