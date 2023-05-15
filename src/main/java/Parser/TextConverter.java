@@ -10,14 +10,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TextConverter {
-    public static String convertPDFtoTxt(String filepath) throws IOException {
+    public static String[] convertPDFtoTxt(String filepath) throws IOException {
         byte[] pdfBytes = pdfBytes(filepath);
         File file = new File(filepath);
         PDDocument pddDoc = Loader.loadPDF(file);
         PDFTextStripper reader = new PDFTextStripper();
         String pageText = reader.getText(pddDoc);
         pddDoc.close();
-        return pageText;
+        String[] lines = pageText.split("\n");
+        return lines;
 
     }
 
