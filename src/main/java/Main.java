@@ -8,7 +8,7 @@ public class Main {
         String[] result = TextConverter.convertPDFtoTxt(args[0]);
         for (String line : result) {
             if (CourseFinder.isCourse(line)) {
-                System.out.println(line);
+                System.out.println(CourseFinder.course(line));
             }
         }
     }
