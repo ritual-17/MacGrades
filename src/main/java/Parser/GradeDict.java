@@ -4,25 +4,44 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GradeDict {
-    private Map<String, Double> grades = new HashMap<>();
+    private final Map<String, Double> macGrades = new HashMap<>();
+    private final Map<String, Double> standardGrades = new HashMap<>();
 
     public GradeDict() {
-        grades.put("A+", 12.0);
-        grades.put("A", 11.0);
-        grades.put("A-", 10.0);
-        grades.put("B+", 9.0);
-        grades.put("B", 8.0);
-        grades.put("B-", 7.0);
-        grades.put("C+", 6.0);
-        grades.put("C", 5.0);
-        grades.put("C-", 4.0);
-        grades.put("D+", 3.0);
-        grades.put("D", 2.0);
-        grades.put("D-", 1.0);
-        grades.put("F", 0.0);
+        macGrades.put("A+", 12.0);
+        macGrades.put("A", 11.0);
+        macGrades.put("A-", 10.0);
+        macGrades.put("B+", 9.0);
+        macGrades.put("B", 8.0);
+        macGrades.put("B-", 7.0);
+        macGrades.put("C+", 6.0);
+        macGrades.put("C", 5.0);
+        macGrades.put("C-", 4.0);
+        macGrades.put("D+", 3.0);
+        macGrades.put("D", 2.0);
+        macGrades.put("D-", 1.0);
+        macGrades.put("F", 0.0);
+
+        standardGrades.put("A+", 4.0);
+        standardGrades.put("A", 3.9);
+        standardGrades.put("A-", 3.7);
+        standardGrades.put("B+", 3.3);
+        standardGrades.put("B", 3.0);
+        standardGrades.put("B-", 2.7);
+        standardGrades.put("C+", 2.3);
+        standardGrades.put("C", 2.0);
+        standardGrades.put("C-", 1.7);
+        standardGrades.put("D+", 1.3);
+        standardGrades.put("D", 1.0);
+        standardGrades.put("D-", 0.7);
+        standardGrades.put("F", 0.0);
     }
 
-    public double getGrade(String letterGrade) {
-        return grades.get(letterGrade);
+    public Map<String, Double> getMacGradeDict() {
+        return macGrades;
     }
+
+    public Map<String, Double> getStandardGradeDict() { return standardGrades; }
+
+
 }

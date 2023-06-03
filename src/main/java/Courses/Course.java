@@ -8,7 +8,7 @@ public class Course {
     private boolean codeFound = false;
     private boolean unitsFound = false;
     private boolean gradeFound = false;
-    private boolean relevant = true;
+    private boolean completed = true;
 
     public void buildCourse(String line) {
         CodeFinder cFinder = new CodeFinder(line);
@@ -16,7 +16,7 @@ public class Course {
             code = cFinder.getCourse();
             codeFound = true;
         } else if (cFinder.containsCourse() && codeFound) {
-            relevant = false;
+            completed = false;
             return;
         }
 
@@ -43,13 +43,10 @@ public class Course {
         return grade;
     }
 
-    public boolean status() {
+    public boolean isBuilt() {
         return codeFound && unitsFound && gradeFound;
     }
 
-    public boolean isRelevant() {
-        //if the course is transfer credit, first part of multiterm course, withdrawn etc. it's not relevant
-        return relevant;
-    }
+    public boolean wasCompleted() { return completed; }
 
 }
