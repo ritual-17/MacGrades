@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseParser {
-    public static List<Course> getAllCourses(String filePath) throws IOException {
-        String[] transcript = TextConverter.convertPDFtoTxt(filePath);
+
+    public static List<Course> getAllCourses(String[] transcript) {
         Course course = new Course();
         List<Course> courseList = new ArrayList<>();
         for (int i = 0; i < transcript.length; i++) {
@@ -25,8 +25,8 @@ public class CourseParser {
         return courseList;
     }
 
-    public static List<Course> getGradedCourses(String filePath) throws IOException {
-        List<Course> courseList = getAllCourses(filePath);
+    public static List<Course> getGradedCourses(String[] transcript) {
+        List<Course> courseList = getAllCourses(transcript);
         List<Course> relevantCourses = new ArrayList<>();
         GradeFinder gFinder;
         for (Course c : courseList) {
