@@ -3,7 +3,6 @@ package Parser;
 import Courses.Course;
 import Courses.GradeFinder;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,10 +27,9 @@ public class CourseParser {
     public static List<Course> getGradedCourses(String[] transcript) {
         List<Course> courseList = getAllCourses(transcript);
         List<Course> relevantCourses = new ArrayList<>();
-        GradeFinder gFinder;
+        GradeFinder gFinder = new GradeFinder();
         for (Course c : courseList) {
-            gFinder = new GradeFinder(c.getGrade());
-            if (gFinder.containsLetterGrade()) {
+            if (gFinder.containsLetterGrade(c.getGrade())) {
                 relevantCourses.add(c);
             }
         }

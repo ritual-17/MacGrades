@@ -7,19 +7,15 @@ import java.util.Map;
 
 public class GPACalc {
 
-    public double getCGPA(List<Course> courseList, Map<String, Double> gradeDict) {
+    public double getGPA(List<Course> courseList, Map<String, Double> gradeDict) {
         double pointsEarned = 0;
         double pointsAttm = 0;
 
         for (Course c : courseList) {
-            try {
-                double grade = gradeDict.get(c.getGrade());
-                double units = Double.parseDouble(c.getUnits());
-                pointsEarned += grade*units;
-                pointsAttm += units;
-            } catch (NullPointerException courseNotGraded) {
-                continue;
-            }
+            double grade = gradeDict.get(c.getGrade());
+            double units = Double.parseDouble(c.getUnits());
+            pointsEarned += grade*units;
+            pointsAttm += units;
         }
 
         return pointsEarned/pointsAttm;

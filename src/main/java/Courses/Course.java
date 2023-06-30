@@ -26,9 +26,9 @@ public class Course {
             unitsFound = true;
         }
 
-        GradeFinder gFinder = new GradeFinder(line);
-        if (gFinder.containsGrade() && !gradeFound && codeFound) {
-            grade = gFinder.getGrade();
+        GradeFinder gFinder = new GradeFinder();
+        if (gFinder.containsGrade(line) && !gradeFound && codeFound) {
+            grade = gFinder.getGrade(line);
             gradeFound = true;
         }
 

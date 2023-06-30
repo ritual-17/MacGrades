@@ -19,8 +19,8 @@ public class Main {
         Map<String, Double> macGradesDict = gradeDict.getMacGradeDict();
         Map<String, Double> standardGradesDict = gradeDict.getStandardGradeDict();
         GPACalc calculator = new GPACalc();
-        double macCGPA = calculator.getCGPA(courseList, macGradesDict);
-        double standardCGPA = calculator.getCGPA(courseList, standardGradesDict);
+        double macCGPA = calculator.getGPA(courseList, macGradesDict);
+        double standardCGPA = calculator.getGPA(courseList, standardGradesDict);
         System.out.printf("McMaster cGPA: %.1f %n", macCGPA);
         System.out.printf("4.0 Scale cGPA: %.2f %n", standardCGPA);
     }
