@@ -12,6 +12,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String[] transcriptLines = TextConverter.convertPDFtoTxt(args[0]);
         List<Course> courseList = CourseParser.getGradedCourses(transcriptLines);
+        if (courseList.isEmpty()) {
+            System.out.println("No Courses Found");
+            return;
+        }
         for (Course c : courseList) {
             System.out.printf("%s: %s, %s units %n", c.getCode(), c.getGrade(), c.getUnits());
         }
