@@ -1,4 +1,4 @@
-package Parser;
+package PDF;
 
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -14,7 +14,6 @@ public class TextConverter {
         PDFTextStripper reader = new PDFTextStripper();
         String pageText = reader.getText(pddDoc);
         pddDoc.close();
-        String[] lines = pageText.split("\n");
-        return lines;
+        return pageText.split("\n");
     }
 }

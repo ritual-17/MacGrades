@@ -1,4 +1,4 @@
-package Parser;
+package GPA;
 
 import Courses.Course;
 

@@ -1,8 +1,8 @@
 import Courses.Course;
-import Parser.CourseParser;
-import Parser.GPACalc;
-import Parser.GradeDict;
-import Parser.TextConverter;
+import PDF.CourseParser;
+import GPA.GPACalc;
+import GPA.GradeDict;
+import PDF.TextConverter;
 
 import java.io.IOException;
 import java.util.List;

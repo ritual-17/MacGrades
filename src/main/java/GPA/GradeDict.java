@@ -1,4 +1,4 @@
-package Parser;
+package GPA;
 
 import java.util.HashMap;
 import java.util.Map;

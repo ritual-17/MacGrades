@@ -1,4 +1,4 @@
-package Parser;
+package PDF;
 
 import Courses.Course;
 import Courses.GradeFinder;
